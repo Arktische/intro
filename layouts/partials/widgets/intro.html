@@ -1,33 +1,4 @@
 {{ $page := .root }}
 {{ $section := .page }}
 <h1 class="hero-title">{{$section.Title}}</h1>
-<div class="row">
-  <div class="col-12 col-lg-4">
-    {{$section.Content}}
-    </div>
- <div class="col-12 col-lg-8">
-   <div class="row">
-     {{ with $section.ResearchTopic }}
-      <div class="col-md-5">
-            <div class="section-subheading">{{ i18n "Research Topics" | markdownify }}</div>
-        <ul class="ul-interests mb-0">
-          {{ range . }}
-          <li>{{ . | markdownify | emojify }}</li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-     
-          {{ with $section.Connection }}
-      <div class="col-md-7">
-            <div class="section-subheading">{{ i18n "Support & Fundings" | markdownify }}</div>
-        <ul class="ul-interests mb-0">
-          {{ range . }}
-          <li>{{ . | markdownify | emojify }}</li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-     </div>
-   </div>
-  </div>
+{{$section.Content}}
